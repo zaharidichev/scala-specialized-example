@@ -7,7 +7,7 @@ import org.openjdk.jmh.annotations.{Benchmark, BenchmarkMode, Mode, OutputTimeUn
 sealed trait Color
 case object White extends Color
 case object Black extends Color
-case class RookSpecialized[@specialized T](x:T, y:T, color: Color)
+case class RookSpecialized[@specialized(Int) T](x:T, y:T, color: Color)
 case class RookNonSpecialized[T](x:T, y:T, color: Color)
 
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
